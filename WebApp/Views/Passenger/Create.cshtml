@@ -1,0 +1,36 @@
+﻿@model PassengerViewModel
+    <form asp-action="Create" method="post">
+        <h6 class="display-4">Create</h6>
+        <div class="row">
+            <div class="col-md-4">
+                First Name
+            </div>
+            <div class="col-md-8">
+                <Input asp-for="FirstName" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                Last Name
+            </div>
+            <div class="col-md-8">
+                <Input asp-for="LastName" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                Weight
+            </div>
+            <div class="col-md-8">
+                <Input asp-for="Weight" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success btn-lg float-right"
+                    type="submit">
+                Submit
+            </button>
+        </div>
+    </form>

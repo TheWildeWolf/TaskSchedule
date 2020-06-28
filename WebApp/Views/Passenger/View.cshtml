@@ -1,0 +1,71 @@
+﻿@model PassengerViewModel
+@{
+    ViewData["Title"] = "View";
+}
+<h6>View</h6>
+<div class="row">
+    <div class="col-md-4">
+        First Name
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(x => x.FirstName)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        Last Name
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(x => x.LastName)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        Weight
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(x => x.Weight)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        State
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(x => x.State)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        Appoinment if any
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(x => x.ScheduledTime)
+    </div>
+</div>
+@if (Model.State == Core.Entities.PassengerState.Open)
+{
+<form asp-action="Update" method="post">
+    @Html.HiddenFor(x => x.Id)
+    <div class="row">
+        <div class="col-md-4">
+            Appoinment
+        </div>
+        <div class="col-md-8">
+            @Html.DropDownList("AppoinmentId", Model.Appoinments, "--Select A Appoinment --", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-warning btn-lg float-right"
+                type="submit">
+            Update
+        </button>
+    </div>
+    
+</form>
+    
+}
+
+
